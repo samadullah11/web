@@ -1,0 +1,702 @@
+body {
+    background: linear-gradient(135deg, #202b5a 0%, #432561 100%);
+    /* background: linear-gradient(135deg, #1e3e4c, #203a43, #2b6984); */
+    /* background: #0f172a; */
+    /* background: #0f172a; */
+}
+
+
+/* Toggle Button */
+
+.dark-toggle {
+    border: 2px solid #0dcaf0;
+    border-radius: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.dark-toggle:hover {
+    color: #0dcaf0;
+    background-color: #0dcaf0;
+    text-shadow: 0 0 10px #0dcaf0;
+}
+
+
+/* Light Mode */
+
+body.light-mode {
+    background: #f8f9fa;
+    color: black;
+}
+
+
+/* Navbar Light */
+
+body.light-mode .custom-navbar {
+    background: black;
+    color: white;
+}
+
+
+/* Links Light */
+
+body.light-mode .nav-links li a {
+    color: white;
+}
+
+
+/* Logo Light */
+
+body.light-mode .logo {
+    color: white;
+}
+
+
+/* Navbar */
+
+.custom-navbar {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+
+/* Logo */
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #0dcaf0;
+}
+
+
+/* Links */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+/* Glow Hover */
+
+.nav-links li a:hover {
+    color: #0dcaf0;
+    text-shadow: 0 0 10px #0dcaf0;
+}
+
+
+/* Underline Animation */
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #0dcaf0;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+
+/* Toggle Button */
+
+.menu-toggle {
+    display: none;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        right: -100%;
+        flex-direction: column;
+        background: #0f172a;
+        width: 200px;
+        padding: 20px;
+        transition: 0.4s;
+    }
+    .nav-links.active {
+        right: 0;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+
+/* Scroll Effect */
+
+.scrolled {
+    background: #0f172a;
+    box-shadow: 0 0 15px #0dcaf0;
+}
+
+
+/* Hero Section with Background */
+
+.hero {
+    height: 100vh;
+    background: url('../images/bg.jpg') no-repeat center center/cover;
+    position: relative;
+    color: white;
+}
+
+
+/* Dark Overlay */
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Profile Image */
+
+.hero-img img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid #0dcaf0;
+    object-fit: cover;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+/* Floating Animation */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+/* Text Animation */
+
+.hero h1 {
+    animation: fadeUp 1.5s ease;
+}
+
+.hero h4 {
+    animation: fadeUp 2s ease;
+}
+
+.hero p {
+    animation: fadeUp 2.5s ease;
+}
+
+
+/* Fade Up Animation */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* About Section */
+
+.about {
+    color: white;
+}
+
+
+/* Image Style */
+
+.about-img img {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    width: 260px;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.about-img img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Progress Bar Animation */
+
+.progress-bar {
+    animation: load 4s ease;
+}
+
+@keyframes load {
+    from {
+        width: 0;
+    }
+}
+
+
+/* Text Animation */
+
+.about h2 {
+    animation: fadeUp 1.5s ease;
+}
+
+.about p {
+    animation: fadeUp 2s ease;
+}
+
+
+/* Contact Section */
+
+.contact {
+    color: white;
+}
+
+
+/* Contact Box */
+
+.contact-info,
+.contact-form {
+    /* background: linear-gradient(135deg, #3850bb 0%, #5f2b93 100%) !important; */
+    background: #151e33;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.contact-info:hover,
+.contact-form:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Inputs */
+
+.contact-form .form-control {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.form-control:focus {
+    box-shadow: 0px 0px 15px rgb(207, 207, 231);
+}
+
+.contact-form .form-control::placeholder {
+    color: gray;
+}
+
+
+/* Social Icons */
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0dcaf0;
+    transform: scale(1.2);
+}
+
+*/
+/* Skills Section */
+
+.skills {
+    padding: 0;
+}
+
+
+/* Circle Skills */
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 8px solid #0dcaf0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    transition: 0.4s;
+}
+
+.circle span {
+    font-weight: bold;
+}
+
+.circle:hover {
+    transform: scale(1.2);
+}
+
+
+/* Tech Cards */
+
+.tech-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    color: white;
+}
+
+.tech-card i {
+    font-size: 35px;
+    color: #0dcaf0;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    background: #0dcaf0;
+    color: black;
+}
+
+.tech-card:hover i {
+    color: black;
+}
+
+
+/* Timeline Section */
+
+.timeline {
+    color: white;
+}
+
+
+/* Container */
+
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+    color: white;
+}
+
+
+/* Vertical Line */
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #0dcaf0;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Timeline Item */
+
+.timeline-item {
+    padding: 20px;
+    position: relative;
+    width: 50%;
+    color: white;
+}
+
+
+/* Left Side */
+
+.timeline-item.left {
+    left: 0;
+}
+
+
+/* Right Side */
+
+.timeline-item.right {
+    left: 50%;
+}
+
+
+/* Content Box */
+
+.timeline-item .content {
+    /* background: rgba(255, 255, 255, 0.05); */
+    background: #0f172a !important;
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    background: #111;
+}
+
+
+/* Hover Effect */
+
+.timeline-item .content:hover {
+    transform: scale(1.05);
+}
+
+
+/* Circle */
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #0dcaf0;
+    border-radius: 50%;
+    top: 20px;
+    right: -8px;
+}
+
+.timeline-item.right::before {
+    left: -8px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        margin-bottom: 20px;
+    }
+    .timeline-container::after {
+        left: 10px;
+    }
+    .timeline-item::before {
+        left: 0;
+    }
+}
+
+
+/* Glow Effect */
+
+.timeline-item .content {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
+}
+
+
+/* Hover Glow */
+
+.timeline-item .content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0dcaf0, 0 0 40px #0dcaf0;
+}
+
+
+/* Hidden by default */
+
+.timeline-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.6s ease;
+}
+
+
+/* When visible */
+
+.timeline-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Partner Section */
+
+.partner {
+    color: white;
+}
+
+
+/* Card */
+
+.partner-card {
+    background: #0f172a;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Hover Glow */
+
+.partner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #0dcaf0, 0 0 40px #0dcaf0;
+}
+
+
+/* Image */
+
+.partner-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #0dcaf0;
+    object-fit: cover;
+}
+
+
+/* Social Icons */
+
+.partner-social a {
+    margin: 0 10px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+.partner-social a:hover {
+    color: #0dcaf0;
+    transform: scale(1.2);
+}
+
+
+/* Message Section */
+
+.message {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+
+/* Form Box */
+
+.message-form {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+
+/* Inputs */
+
+.message-form .form-control {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+
+/* Floating Label */
+
+.message-form label {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    color: #aaa;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+
+/* Focus Effect */
+
+.message-form .form-control:focus+label,
+.message-form .form-control:valid+label {
+    top: -10px;
+    font-size: 12px;
+    color: #0dcaf0;
+}
+
+
+/* Button Hover */
+
+.message-form button:hover {
+    background: #0dcaf0;
+    box-shadow: 0 0 15px #0dcaf0;
+}
+
+
+/* Footer */
+
+.footer {
+    background: #0f172a;
+    color: white;
+}
+
+
+/* Links */
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: #0dcaf0;
+    padding-left: 5px;
+}
+
+
+/* Social Icons */
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+}
+
+
+/* Glow Effect */
+
+.footer-social a:hover {
+    color: #0dcaf0;
+    transform: scale(1.2);
+    text-shadow: 0 0 10px #0dcaf0;
+}
+
+
+/* Bottom Border */
+
+.footer .border-top {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
